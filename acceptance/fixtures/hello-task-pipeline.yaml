@@ -1,0 +1,12 @@
+apiVersion: stable.conveyer.com/v1
+kind: Pipeline
+metadata: { name: hello }
+spec:
+  jobs:
+    - name: hello
+      steps:
+        - task: hello
+          image: busybox
+          run:
+            path: echo
+            args: [hello, there]

@@ -26,3 +26,17 @@ spec:
                     type: object
                     properties:
                       name: { type: string }
+                      steps:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            task: { type: string }
+                            image: { type: string }
+                            run:
+                              type: object
+                              properties:
+                                path: { type: string }
+                                args:
+                                  type: array
+                                  items: { type: string }

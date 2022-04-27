@@ -11,7 +11,7 @@ Describe 'crd'
     The status should be success
   End
 
-  It 'creates a pipeline'
+  It 'creates an empty pipeline'
     When call kubectl --namespace conveyer-test apply --filename fixtures/empty-pipeline.yaml
     The output should include ''
     The status should be success
@@ -26,6 +26,12 @@ Describe 'crd'
   It 'gets the pipeline by abbreviation'
     When call kubectl --namespace conveyer-test get pl/empty
     The output should include 'empty'
+    The status should be success
+  End
+
+  It 'creates a pipeline with a job containing a task'
+    When call kubectl --namespace conveyer-test apply --filename fixtures/hello-task-pipeline.yaml
+    The output should include ''
     The status should be success
   End
 End
