@@ -1,0 +1,4 @@
+apiVersion: stable.conveyer.com/v1
+kind: Pipeline
+metadata: { name: empty }
+spec: {}
